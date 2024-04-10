@@ -23,24 +23,12 @@ public static class AnimalEndpoints
             var animals = mockDb.animalRepository.getListOfAnimals();
             return Results.Ok(animals);
         });
-        app.MapGet("/visits-minimalapi", (int id) =>
-        {
-            MockDb mockDb = new MockDb();
-            var visits = mockDb.visitRepository.listOfVisitWithId(id);
-            return Results.Ok(visits);
-        });
         //POST
         app.MapPost("/animals-minimalapi", (Animal animal) =>
         {
             MockDb mockDb = new MockDb();
             mockDb.animalRepository.add(animal);
             return Results.Created("", animal);
-        });
-        app.MapPost("/visits-minimalapi", (Visit visit) =>
-        {
-            MockDb mockDb = new MockDb();
-            mockDb.visitRepository.add(visit);
-            return Results.Created("", visit);
         });
         //PUT
         app.MapPut("/animals-minimalapi", (Animal animal) =>
@@ -50,7 +38,7 @@ public static class AnimalEndpoints
             return Results.Ok(animal);
         });
         //DELETE
-        app.MapDelete("/visits-minimalapi", (Animal animal) =>
+        app.MapDelete("/animals-minimalapi", (Animal animal) =>
         {
             MockDb mockDb = new MockDb();
             mockDb.animalRepository.delete(animal);
