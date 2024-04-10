@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Database;
 using WebApplication1.Models;
 
@@ -15,7 +16,7 @@ public static class VisitEndpoints
             return Results.Ok(visits);
         });
         //POST
-        app.MapPost("/visits-minimalapi", (Visit visit) =>
+        app.MapPost("/visits-minimalapi", ([FromBody]Visit visit) =>
         {
             MockDb mockDb = new MockDb();
             mockDb.visitRepository.add(visit);
