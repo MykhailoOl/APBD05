@@ -9,6 +9,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddSingleton<AnimalRepository>();
 builder.Services.AddSingleton<VisitRepository>();
+builder.Services.AddSingleton<MockDb>();
 
 var app = builder.Build();
 
