@@ -5,7 +5,7 @@ namespace WebApplication1.Database
     public class MockDb
     {
         public AnimalRepository animalRepository { get; set; } = new AnimalRepository();
-        public VisitRepository visitRepository { get; set; } = new VisitRepository();
+        public VisitRepository visitRepository { get; set; } = new VisitRepository();   
 
         public MockDb()
         {

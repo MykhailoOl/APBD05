@@ -13,7 +13,7 @@ public class AnimalRepository
 
     public Animal getAnimalById(int id)
     {
-        return Animals[id];
+        return Animals[id-1];
     }
 
     public void add(Animal animal)
